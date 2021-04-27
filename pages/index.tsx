@@ -1,10 +1,10 @@
-import { Menu } from "../components/Menu";
+
 
 
 const IndexPage = () => {
     return (
         <div>
-            <h3>BIENVENIDO A CRIPTO NAT</h3>
+            <h3>Cómo invertir en cryptocurrency: lo que debes saber</h3>
         </div>
     );
 };
