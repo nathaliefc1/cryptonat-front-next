@@ -31,22 +31,6 @@ export const PrimaryLayout: React.FC<{ children: React.ReactNode }> = ({ childre
                 <Menu />
                 <div style={{ padding: "20px 0", textAlign: "center" }}>
                     <Title>Bienvenido a CRIPTO NAT </Title>
-                    <div style={{ padding: "40px 0" }}>
-                        {!user && (
-                            <>
-                                <a href="/api/auth/login" className="btn btn-primary">Login</a>
-                            </>
-                        )}
-                    </div>
-                    <div style={{ padding: "40px 0" }}>
-                        {user && (
-                            <>
-                                <img src={user.picture} width="40" className="rounded" />{" "}
-                                <a href="/api/auth/logout" className="btn btn-primary">
-                                    Logout {user.email}</a>
-                            </>
-                        )}
-                    </div>
                     {children}
                 </div>
                 <footer>
