@@ -35,6 +35,11 @@ export const Menu = () => {
                                 <a className="nav-link">Página 1</a>
                             </Link>
                         </li>
+                        <li className="nav-item">
+                            <Link href="/george">
+                                <a className="nav-link">George</a>
+                            </Link>
+                        </li>
                     </ul>
                     <div style={{ display: "flex-end" }}>
                         {!user && (
