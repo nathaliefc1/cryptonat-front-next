@@ -8,7 +8,7 @@ export const Menu = () => {
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container-fluid">
                 <a className="navbar-brand" href="#">
-                    CriptoNat
+                    <img src="https://www.flaticon.com/svg/vstatic/svg/1442/1442444.svg?token=exp=1619648050~hmac=e66249f35bf128218f59425adbf287d2" alt="" width="30" height="24"></img>
                 </a>
                 <button
                     className="navbar-toggler"

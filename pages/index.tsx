@@ -1,10 +1,10 @@
 
-
-
-const IndexPage = () => {
+const IndexPage = ({ Component }) => {
     return (
         <div>
-            <h3>Cómo invertir en cryptocurrency: lo que debes saber</h3>
+            <h3>New to cryptocurrency?  No problem. </h3>
+            <div className="container" style={{ display: "flex" }}>
+            </div>
         </div>
     );
 };
