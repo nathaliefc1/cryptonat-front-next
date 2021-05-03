@@ -5,10 +5,9 @@ import { useUser } from '@auth0/nextjs-auth0';
 import React from "react";
 import { Footer } from '../Footer';
 import { Calltoaction } from '../Calltoaction';
+import { Title } from '../Title';
 
-const Title = styled.h1`
-  color: #f46044;
-`;
+
 
 export const PrimaryLayout: React.FC<{ children: React.ReactNode }> = ({ children, }) => {
     const { user, error, isLoading } = useUser();
@@ -37,7 +36,7 @@ export const PrimaryLayout: React.FC<{ children: React.ReactNode }> = ({ childre
             </Head>
             <body>
                 <Menu />
-                <Title>Welcome to CRYPTO NAT </Title>
+                <Title />
                 <div style={{ padding: "20px 0", textAlign: "center" }}>
                     {children}
                 </div>

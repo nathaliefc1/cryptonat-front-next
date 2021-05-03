@@ -5,7 +5,7 @@ export default () => {
     const handleAddUser = () => {
         axios.post('http://localhost:3001/api/user/create', {
             name: 'Uma',
-            email: 'nathalie@muggins.com',
+            email: 'nathalie@gggg.com',
             preferred_crypto: 'Cardano',
             cuenta: 'ES47 234234'
         }).then(response => console.log(response.data))

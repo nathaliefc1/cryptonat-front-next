@@ -49,10 +49,10 @@ const App = ({ Component, pageProps }) => (
                 </div>
             </div>
             <div className="container" style={{ padding: '20px', width: '400px', height: '300px' }}>
-                <h3 >
+                {/* <h3 >
                     My chart
-                </h3>
-                <MyChart />
+                </h3> 
+                <MyChart />*/}
             </div>
         </PrimaryLayout>
     </UserProvider>

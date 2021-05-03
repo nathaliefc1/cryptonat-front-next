@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { useUser } from '@auth0/nextjs-auth0';
 import Styled from 'styled-components';
+import { ButtonGradient } from './ButtonGradient'
 
 const Navbr = Styled.nav`
     padding: 2rem 1rem 3rem;
+    background-color: none;
     
 `
 const List = Styled.li`
@@ -18,11 +20,11 @@ const Aref = Styled.a`
 export const Menu = () => {
     const { user, error, isLoading } = useUser();
     return (
-        <Navbr className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <Navbr className="navbar navbar-expand-lg navbar-light">
             <div className="container-fluid">
                 <a className="navbar-brand" href="#">
                     <img src="https://www.flaticon.com/svg/vstatic/svg/1442/1442444.svg?token=exp=1619648050~hmac=e66249f35bf128218f59425adbf287d2"
-                        alt="" width="50" height="30" />
+                        alt="" width="70" height="50" />
                 </a>
                 <button
                     className="navbar-toggler"
@@ -53,7 +55,7 @@ export const Menu = () => {
                     <div style={{ display: "flex-end" }}>
                         {!user && (
                             <>
-                                <a href="/api/auth/login" className="btn btn-primary">Login</a>
+                                <ButtonGradient />
                             </>
                         )}
                     </div>

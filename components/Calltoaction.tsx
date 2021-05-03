@@ -7,7 +7,7 @@ const DownloadButton = Styled.button`
     text-align: center;
 `
 const Cta = Styled.section`
-    background-color: #ff4c68;
+    background: linear-gradient(180deg,#FF00FF 0%, #5A4FCF 100%);
     color: #fff;
     padding: 7% 15%;
     text-align: center;
