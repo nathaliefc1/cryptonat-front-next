@@ -15,7 +15,7 @@ const Cta = Styled.section`
 `
 const CtaHeading = Styled.h3`
     font-family: "Montserrat";
-    font-size: 3.5rem;
+    font-size: 3rem;
     line-height: 1.5;
 `
 
@@ -23,7 +23,6 @@ const CtaHeading = Styled.h3`
 export const Calltoaction = () => {
     return (
         <Cta id="cta">
-
             <CtaHeading className="cta-heading">¿Are you ready to try it out?</CtaHeading>
             <DownloadButton className="download-button btn btn-lg btn-dark"
                 type="button">

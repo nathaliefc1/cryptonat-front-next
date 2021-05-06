@@ -23,8 +23,8 @@ export const Menu = () => {
         <Navbr className="navbar navbar-expand-lg navbar-light">
             <div className="container-fluid">
                 <a className="navbar-brand" href="#">
-                    <img src="https://www.flaticon.com/svg/vstatic/svg/1442/1442444.svg?token=exp=1619648050~hmac=e66249f35bf128218f59425adbf287d2"
-                        alt="" width="70" height="50" />
+                    <img src="https://www.flaticon.com/free-icon/cryptocurrency_1465769?term=cryptocurrency&page=1&position=2&page=1&position=2&related_id=1465769&origin=search"
+                        width="70" height="50" />
                 </a>
                 <button
                     className="navbar-toggler"
@@ -42,12 +42,17 @@ export const Menu = () => {
                             </Link>
                         </List>
                         <List className="nav-item">
+                            <Link href="#instructions">
+                                <Aref className="nav-link">Instructions</Aref>
+                            </Link>
+                        </List>
+                        <List className="nav-item">
                             <Link href="#cta">
                                 <Aref className="nav-link">Download</Aref>
                             </Link>
                         </List>
                         <List className="nav-item">
-                            <Link href="/uma">
+                            <Link href="/Simulator">
                                 <Aref className="nav-link">Simulator</Aref>
                             </Link>
                         </List>

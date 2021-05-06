@@ -10,12 +10,12 @@ import { Title } from '../Title';
 
 
 export const PrimaryLayout: React.FC<{ children: React.ReactNode }> = ({ children, }) => {
-    const { user, error, isLoading } = useUser();
+    // const { user, error, isLoading } = useUser();
     return (
 
         <div >
             <Head>
-                <title>Cripto Nat</title>
+                <title>Crypto Nat</title>
                 <link
                     href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
                     rel="stylesheet"
@@ -35,13 +35,9 @@ export const PrimaryLayout: React.FC<{ children: React.ReactNode }> = ({ childre
 
             </Head>
             <body>
-                <Menu />
-                <Title />
                 <div style={{ padding: "20px 0", textAlign: "center" }}>
                     {children}
                 </div>
-                <Calltoaction />
-                <Footer />
             </body>
         </div>
 

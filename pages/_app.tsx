@@ -2,59 +2,19 @@ import { UserProvider } from '@auth0/nextjs-auth0';
 import { PrimaryLayout } from "../components/layouts/PrimaryLayout";
 import { CryptoTile } from '../components/layouts/CryptoTile';
 import { MyChart } from '../components/layouts/Chart';
+import { Title } from '../components/Title';
+import { Calltoaction } from '../components/Calltoaction';
+import { Footer } from '../components/Footer';
+import { Menu } from '../components/Menu';
+
 
 
 
 const App = ({ Component, pageProps }) => (
-
     <UserProvider>
-        <PrimaryLayout>
-            <Component {...pageProps} />
-            <div className="container">
-                <div className="card-group">
-                    <div className="card col-2">
-                        <CryptoTile />
-
-                    </div>
-                    <div className="card col-2">
-                        <CryptoTile />
-                    </div>
-                    <div className="card col-2">
-                        <CryptoTile />
-                    </div>
-                    <div className="card col-2">
-                        <CryptoTile />
-                    </div>
-                    <div className="card col-2">
-                        <CryptoTile />
-                    </div>
-                </div>
-                <div className="card-group">
-                    <div className="card col-2">
-                        <CryptoTile />
-
-                    </div>
-                    <div className="card col-2">
-                        <CryptoTile />
-                    </div>
-                    <div className="card col-2">
-                        <CryptoTile />
-                    </div>
-                    <div className="card col-2">
-                        <CryptoTile />
-                    </div>
-                    <div className="card col-2">
-                        <CryptoTile />
-                    </div>
-                </div>
-            </div>
-            <div className="container" style={{ padding: '20px', width: '400px', height: '300px' }}>
-                {/* <h3 >
-                    My chart
-                </h3> 
-                <MyChart />*/}
-            </div>
-        </PrimaryLayout>
+        <Menu />
+        <Component {...pageProps} />
+        <Footer />
     </UserProvider>
 );
 
