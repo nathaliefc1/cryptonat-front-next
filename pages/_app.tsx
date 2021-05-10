@@ -1,7 +1,7 @@
 import { UserProvider } from '@auth0/nextjs-auth0';
 import { PrimaryLayout } from "../components/layouts/PrimaryLayout";
-import { CryptoTile } from '../components/layouts/CryptoTile';
-import { MyChart } from '../components/layouts/Chart';
+import { CryptoTile } from '../components/CryptoTile';
+import { MyChart } from '../components/Chart';
 import { Title } from '../components/Title';
 import { Calltoaction } from '../components/Calltoaction';
 import { Footer } from '../components/Footer';

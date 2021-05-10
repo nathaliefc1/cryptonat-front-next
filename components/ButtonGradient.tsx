@@ -1,7 +1,7 @@
 import Styled from 'styled-components';
 
 const Bgradient = Styled.a`
-    background: linear-gradient(180deg,#FF00FF 0%, #5A4FCF 100%);
+    background: linear-gradient(180deg,#FD749B 0%, #5A4FCF 100%);
     font-weight: bold;
     padding: 0.75em 1.75em;
     border: none;

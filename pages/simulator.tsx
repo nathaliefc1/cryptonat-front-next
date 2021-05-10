@@ -1,14 +1,15 @@
 import axios from 'axios';
 import Form from '../components/Form'
 
-export const simulator = () => {
+const Simulator = () => {
 
     const handleAddUser = () => {
-        axios.post('http://localhost:3001/api/user/create', {
-            name: 'Uma',
-            email: 'nathalie@gggg.com',
-            preferred_crypto: 'Cardano',
-            cuenta: 'ES47 234234'
+        axios.post('http://localhost:3000/api/profile', {
+            name: `Uma`,
+            email: `uma@123.com`,
+            capital: `120`,
+            divisa: `EUR`,
+            prefered_cryptocurrency: `Stellar(XLM)`,
         }).then(response => console.log(response.data))
     }
     return (
@@ -16,9 +17,11 @@ export const simulator = () => {
             <h3>This is <b>Astronaut UMA</b></h3>
             <p>She will help you. But first you need to create your user.</p>
             <p>Let's start selecting your favorite cryptocurrency.</p>
-            <button onClick={handleAddUser}>Add user</button>
+            <button className="btn btn-primary" onClick={handleAddUser}>Add user</button>
 
 
         </div>
     );
 };
+
+export default Simulator;

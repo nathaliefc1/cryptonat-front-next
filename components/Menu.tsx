@@ -4,18 +4,21 @@ import Styled from 'styled-components';
 import { ButtonGradient } from './ButtonGradient'
 
 const Navbr = Styled.nav`
-    padding: 2rem 1rem 3rem;
+    padding: 2rem 1rem 2rem;
     background-color: none;
     
 `
 const List = Styled.li`
-    padding: 5px 18px;
-    text-align: center;
+    .nav-item{
+     padding: 5px 18px;
+     text-align: center;
+    }
+    a {
+        font-size: 1.2rem;
+     font-family: 'Montserrat';
+    }
 `
-const Aref = Styled.a`
-    font-size: 1.2rem;
-    font-family: 'Montserrat';
-`
+
 
 export const Menu = () => {
     const { user, error, isLoading } = useUser();
@@ -23,8 +26,8 @@ export const Menu = () => {
         <Navbr className="navbar navbar-expand-lg navbar-light">
             <div className="container-fluid">
                 <a className="navbar-brand" href="#">
-                    <img src="https://www.flaticon.com/free-icon/cryptocurrency_1465769?term=cryptocurrency&page=1&position=2&page=1&position=2&related_id=1465769&origin=search"
-                        width="70" height="50" />
+                    <img src="/cryptocurrency_3.png"
+                        width="60" />
                 </a>
                 <button
                     className="navbar-toggler"
@@ -35,28 +38,28 @@ export const Menu = () => {
                     <span className="navbar-toggler-icon" />
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                        <List className="nav-item">
+                    <List className="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li className="nav-item">
                             <Link href="/">
-                                <Aref className="nav-link">Home</Aref>
+                                <a className="nav-link">Home</a>
                             </Link>
-                        </List>
-                        <List className="nav-item">
+                        </li>
+                        <li className="nav-item">
                             <Link href="#instructions">
-                                <Aref className="nav-link">Instructions</Aref>
+                                <a className="nav-link">Instructions</a>
                             </Link>
-                        </List>
-                        <List className="nav-item">
+                        </li>
+                        <li className="nav-item">
                             <Link href="#cta">
-                                <Aref className="nav-link">Download</Aref>
+                                <a className="nav-link">Download</a>
                             </Link>
-                        </List>
-                        <List className="nav-item">
-                            <Link href="/Simulator">
-                                <Aref className="nav-link">Simulator</Aref>
+                        </li>
+                        <li className="nav-item">
+                            <Link href="/simulator">
+                                <a className="nav-link">Simulator</a>
                             </Link>
-                        </List>
-                    </ul>
+                        </li>
+                    </List>
                     <div style={{ display: "flex-end" }}>
                         {!user && (
                             <>
