@@ -50,8 +50,8 @@ export const Title = ({ text = "Welcome to Crypto Nat" }) => {
         <Row className="row">
             <div className="container col lg-6 lg-3">
                 <h1>{text = "¿New to crypto currency? No problem"}</h1>
-                <h3>We provide an easy solution four you to understand cryptocurrency</h3>
-                <p>CryptoNat and platform for experiment with investment in bitcoins</p>
+                <h3>We provide an easy solution for you to understand cryptocurrency</h3>
+                <p>CryptoNat a platform for experiment with investment in bitcoins</p>
                 <ButtonGradient />
             </div>
             <div className="col lg-6 lg-3">

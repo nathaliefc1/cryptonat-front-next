@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Link from "next/link";
 import { useUser } from '@auth0/nextjs-auth0';
 import Styled from 'styled-components';
@@ -19,9 +20,27 @@ const List = Styled.li`
     }
 `
 
+type User = {
+    name: string;
+    email?: string;
+    nickname?: string
+}
 
-export const Menu = () => {
+type Prop = {
+    fetchProfile: (data: User) => void;
+}
+
+export const Menu = ({ fetchProfile }: Prop) => {
     const { user, error, isLoading } = useUser();
+
+    useEffect(() => {
+        if (user) {
+            const { name, email, nickname } = user;
+            const info = { name, email, nickname };
+            fetchProfile(info)
+        }
+    }, [user])
+
     return (
         <Navbr className="navbar navbar-expand-lg navbar-light">
             <div className="container-fluid">

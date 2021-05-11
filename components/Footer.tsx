@@ -3,7 +3,7 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaEnvelope } from 'react-icons/fa'
 import Styled from 'styled-components';
 
 const FooterStyle = Styled.div` 
-    padding: 4% 10%;
+    padding: 2% 10%;
     text-align: center;
     color: #8f8f8f
 `

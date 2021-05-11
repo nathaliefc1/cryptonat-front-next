@@ -1,7 +1,8 @@
 import axios from 'axios';
 import Form from '../components/Form'
+import { PrimaryLayout } from '../components/layouts/PrimaryLayout';
 
-const Simulator = () => {
+const Simulator = (props) => {
 
     const handleAddUser = () => {
         axios.post('http://localhost:3000/api/profile', {
@@ -14,12 +15,20 @@ const Simulator = () => {
     }
     return (
         <div>
-            <h3>This is <b>Astronaut UMA</b></h3>
-            <p>She will help you. But first you need to create your user.</p>
-            <p>Let's start selecting your favorite cryptocurrency.</p>
-            <button className="btn btn-primary" onClick={handleAddUser}>Add user</button>
+            <PrimaryLayout>
+                <div className="container">
+                    <h3>This is <b>Astronaut UMA</b></h3>
+                    <p>She will help you. But first you need to create your user.</p>
+                    <p>Let's start selecting your favorite cryptocurrency.</p>
+                </div>
 
+                <button className="btn btn-primary" onClick={handleAddUser}>Add user</button>
 
+                <div className="container">
+                    <Form />
+                </div>
+
+            </PrimaryLayout>
         </div>
     );
 };

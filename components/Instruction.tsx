@@ -37,17 +37,11 @@ export const Instructions = ({ text = "Welcome to Crypto Nat" }) => {
                 </div>
                 <div className="container col lg-6">
                     <h1>{text}</h1>
-                    <p> Free cryptocurrency purchase simulator, where you can select your favorites, check their value in future days and review their real fluctuation.
-                    You can set time alerts to check the growth of your fictitious investment.
-                </p>
-                    <ButtonGradient />
+                    <p>
+                        Free cryptocurrency purchase simulator, where you can select your favorites, check their value in future days and review their real fluctuation.
+                        You can set time alerts to check the growth of your fictitious investment.
+                    </p>
                 </div>
-            </div>
-            <div /*style={{
-                margin: '0',
-                padding: '0',
-            }}*/>
-
             </div>
         </Row>
     )

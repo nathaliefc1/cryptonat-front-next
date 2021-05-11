@@ -1,13 +1,12 @@
 import React from 'react';
 import { FaApple, FaGooglePlay } from 'react-icons/fa';
 import Styled from 'styled-components';
-
+import { useUser } from '@auth0/nextjs-auth0';
 
 
 const Cta = Styled.div`
     background: linear-gradient(180deg,#FD749B 0%, #5A4FCF 100%);
     color: #fff;
-    
     text-align: center;
     font-family: 'Montserrat', sans-serif;
 
@@ -20,7 +19,8 @@ const Cta = Styled.div`
         font-family: "Montserrat";
         font-size: 3rem;
         line-height: 1.5;
-        margin: 5% 3% 5% 0;
+        margin: 3% 2% 3% 0%;
+        padding: 30px 0 30px;
     }
     
     .custom-shape-divider-top-1620567913 {
@@ -46,6 +46,7 @@ const Cta = Styled.div`
 
 
 export const Calltoaction = () => {
+    const { user, error, isLoading } = useUser();
     return (
         <Cta id="cta">
             <div className="custom-shape-divider-top-1620567913">
@@ -54,16 +55,23 @@ export const Calltoaction = () => {
                 </svg>
             </div>
             <section >
-
-                <h3 className="cta-heading">¿Are you ready to try it out?</h3>
-                <button className="download-button btn btn-lg btn-dark"
-                    type="button">
-                    <i className="fab fa-apple" /><FaApple /> Download</button>
-                <button className="btn btn-lg btn-light" type="button">
-                    <i className="fab fa-google-play" /><FaGooglePlay />
+                {!user && (
+                    <>
+                        <h3>¿Are you ready to try it out?</h3>
+                        <button className="download-button btn btn-lg btn-dark"
+                            type="button">
+                            <i className="fab fa-apple" /><FaApple /> Download</button>
+                        <button className="btn btn-lg btn-light" type="button">
+                            <i className="fab fa-google-play" /><FaGooglePlay />
                     Download
                 </button>
-
+                    </>
+                )}
+                {user && (
+                    <>
+                        <h3>¡GOOD LUCK!</h3>
+                    </>
+                )}
             </section>
         </Cta>
     )

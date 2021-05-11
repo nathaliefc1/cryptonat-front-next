@@ -1,21 +1,27 @@
+import { useState } from 'react';
 import { UserProvider } from '@auth0/nextjs-auth0';
-import { PrimaryLayout } from "../components/layouts/PrimaryLayout";
-import { CryptoTile } from '../components/CryptoTile';
-import { MyChart } from '../components/Chart';
-import { Title } from '../components/Title';
-import { Calltoaction } from '../components/Calltoaction';
 import { Footer } from '../components/Footer';
 import { Menu } from '../components/Menu';
+import Profile from './api/profile';
 
+const profile = new Profile();
 
+const App = ({ Component, pageProps }) => {
+    const [loggedUser, setLoggedUser] = useState(null);
 
+    const fetchProfile = async (data) => {
+        const response = await profile.create(data);
+        setLoggedUser(response.data);
+    };
 
-const App = ({ Component, pageProps }) => (
-    <UserProvider>
-        <Menu />
-        <Component {...pageProps} />
-        <Footer />
-    </UserProvider>
-);
+    return (
+
+        <UserProvider>
+            <Menu fetchProfile={fetchProfile} />
+            <Component loggedUser={loggedUser} {...pageProps} />
+            <Footer />
+        </UserProvider>
+    )
+};
 
 export default App;

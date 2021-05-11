@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { useUser } from '@auth0/nextjs-auth0';
 import { PrimaryLayout } from "../components/layouts/PrimaryLayout";
 import { CryptoTile } from '../components/CryptoTile';
 import { MyChart } from '../components/Chart';
@@ -6,6 +8,7 @@ import { Calltoaction } from '../components/Calltoaction';
 import { Instructions } from '../components/Instruction';
 import Form from '../components/Form';
 import styled from 'styled-components';
+
 
 const Div = styled.div`
     background: linear-gradient(180deg,#FD749B 0%, #5A4FCF 100%);
@@ -17,7 +20,7 @@ const Div = styled.div`
 `
 
 const IndexPage = (props) => {
-    // const CryptoTile: ({ title, rate, fluctuation });
+    console.log({ props })
     return (
         <div>
             <PrimaryLayout>
@@ -32,15 +35,9 @@ const IndexPage = (props) => {
                     </div>
                 </Div>
                 <div className="container" style={{ padding: '20px', width: '400px', height: '300px' }}>
-                    {/* <h3 >
-                    My chart
-                </h3> 
-                <MyChart />*/}
-
+                    {/*grafic*/}
                 </div>
-                <div>
-                    <Form />
-                </div>
+                
             </PrimaryLayout>
             <Calltoaction />
         </div>
