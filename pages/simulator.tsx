@@ -1,31 +1,28 @@
 import axios from 'axios';
 import Form from '../components/Form'
 import { PrimaryLayout } from '../components/layouts/PrimaryLayout';
+import { TitleSimulator } from '../components/TitleSimulator';
+import { SWRConfig } from "swr";
+import { fetcher } from "../pages/api/swr-fetcher";
+import { MyChart } from "../components/Chart";
 
-const Simulator = (props) => {
-
-    const handleAddUser = () => {
-        axios.post('http://localhost:3000/api/profile', {
-            name: `Uma`,
-            email: `uma@123.com`,
-            capital: `120`,
-            divisa: `EUR`,
-            prefered_cryptocurrency: `Stellar(XLM)`,
-        }).then(response => console.log(response.data))
-    }
+const Simulator = (props, { Component, pageprops }) => {
     return (
         <div>
             <PrimaryLayout>
-                <div className="container">
-                    <h3>This is <b>Astronaut UMA</b></h3>
-                    <p>She will help you. But first you need to create your user.</p>
-                    <p>Let's start selecting your favorite cryptocurrency.</p>
-                </div>
-
-                <button className="btn btn-primary" onClick={handleAddUser}>Add user</button>
-
+                <TitleSimulator />
                 <div className="container">
                     <Form />
+                </div>
+                <div className="container" style={{ padding: "50px" }}>
+                    <SWRConfig
+                        value={{
+                            refreshInterval: 10 * 1000,
+                            fetcher,
+                        }}
+                    >
+                        <MyChart />
+                    </SWRConfig>
                 </div>
 
             </PrimaryLayout>
@@ -34,3 +31,4 @@ const Simulator = (props) => {
 };
 
 export default Simulator;
+

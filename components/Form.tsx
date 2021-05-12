@@ -3,6 +3,18 @@ import ReactDOM from "react-dom";
 import { useForm } from "react-hook-form";
 import { useUser } from '@auth0/nextjs-auth0';
 import Simulator from '../pages/api/simulator';
+import styled from 'styled-components';
+import { ButtonGradient } from "./ButtonGradient";
+
+const Title = styled.h1`
+    font-family: "Montserrat", sans-serif;
+    font-size: 3rem;
+    line-height: 1.5;
+    font-weight: bolder;
+    padding: 7% 10%;
+    text-align: center;
+    color: #5A4FCF;
+`
 
 const simulator = new Simulator();
 
@@ -21,7 +33,8 @@ enum CryptoOptions {
 
 interface IFormInput {
     euros: Number;
-    crypto: CryptoOptions;
+    cryptocurrency: CryptoOptions;
+    checkDate: Date;
 }
 export const addEuros = async (data) => {
     const response = await simulator.addEuros(data);
@@ -31,7 +44,6 @@ export const addEuros = async (data) => {
 export default function Form(props) {
     const { register, handleSubmit, reset } = useForm<IFormInput>();
     const onSubmit = handleSubmit(async (data: IFormInput) => {
-        //data.euros = euros;
         await addEuros(data);
         console.log('SUBMIT');
         console.log(data);
@@ -40,29 +52,47 @@ export default function Form(props) {
     const { user, error, isLoading } = useUser();
 
     return (
-
-        <form className="w-50 m-auto d-flex flex-row justify-content-center" onSubmit={handleSubmit(onSubmit)}>
-            { user && (
+        <div>
+            <Title> Let's Start </Title>
+            {!user && (
                 <>
-                    <input
-                        className="form-control col-xs-2 mr-2"
-                        type="number"
-                        placeholder="Euros"
-                        {...register("euros")}
-                    />
-                    <select className="form-control col-xs-2 ml-2 mr-2" {...register("crypto")}>
-                        <option value="BTC">Bitcoin (BTC)</option>
-                        <option value="ETH">Ethereum (ETH)</option>
-                        <option value="ADA">Cardano (ADA)</option>
-                        <option value="LTC">Litecoin (LTC)</option>
-                        <option value="DOT">Polkadot (DOT)</option>
-                        <option value="XLM">Stellar (XLM)</option>
-                        <option value="BNB">Binance Coin (BNB)</option>
-                    </select>
-                    <input className="col-2 btn btn-primary" type="submit" />
+                    <h3>Please Loggin or create an account to continue</h3>
+                    <ButtonGradient />
                 </>
             )}
-        </form>
+            <form className="w-50 m-auto d-flex flex-row justify-content-center" onSubmit={handleSubmit(onSubmit)}>
+                {user && (
+                    <>
+                        <input
+                            className="form-control col-xs-2 mr-2"
+                            type="number"
+                            placeholder="Euros"
+                            {...register("euros")}
+                        />
+                        <select
+                            className="form-control col-xs-2 ml-2 mr-2"
+                            {...register("cryptocurrency")}>
+                            <option value="BTC">Bitcoin (BTC)</option>
+                            <option value="ETH">Ethereum (ETH)</option>
+                            <option value="ADA">Cardano (ADA)</option>
+                            <option value="LTC">Litecoin (LTC)</option>
+                            <option value="DOT">Polkadot (DOT)</option>
+                            <option value="XLM">Stellar (XLM)</option>
+                            <option value="BNB">Binance Coin (BNB)</option>
+                            <option value="XRP">Ripple (XRP)</option>
+                            <option value="DOGE">Dogecoin (DOGE)</option>
+                            <option value="UNI">Uniswap (UNI)</option>
+                        </select>
+                        <input className="form-control col-xs-2 mr-2"
+                            type="date"
+                            placeholder="Notification date"
+                            {...register("checkDate")}
+                        />
+                        <input className="col-2 btn btn-primary" type="submit" />
+                    </>
+                )}
+            </form>
+        </div>
     );
 }
 

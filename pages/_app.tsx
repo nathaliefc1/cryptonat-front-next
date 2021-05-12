@@ -4,6 +4,7 @@ import { Footer } from '../components/Footer';
 import { Menu } from '../components/Menu';
 import Profile from './api/profile';
 
+
 const profile = new Profile();
 
 const App = ({ Component, pageProps }) => {
