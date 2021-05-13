@@ -1,5 +1,5 @@
 import axios from 'axios';
-import Form from '../components/Form'
+import Form from '../components/Form';
 import { PrimaryLayout } from '../components/layouts/PrimaryLayout';
 import { TitleSimulator } from '../components/TitleSimulator';
 import { SWRConfig } from "swr";

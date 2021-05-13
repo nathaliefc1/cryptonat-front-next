@@ -5,6 +5,9 @@ import { useUser } from '@auth0/nextjs-auth0';
 import Simulator from '../pages/api/simulator';
 import styled from 'styled-components';
 import { ButtonGradient } from "./ButtonGradient";
+import Binance from '../pages/api/binance';
+
+const binance = new Binance();
 
 const Title = styled.h1`
     font-family: "Montserrat", sans-serif;
@@ -44,9 +47,8 @@ export const addEuros = async (data) => {
 export default function Form(props) {
     const { register, handleSubmit, reset } = useForm<IFormInput>();
     const onSubmit = handleSubmit(async (data: IFormInput) => {
+        const response = await binance.getCryptoPrice(data.cryptocurrency);
         await addEuros(data);
-        console.log('SUBMIT');
-        console.log(data);
         reset();
     });
     const { user, error, isLoading } = useUser();
@@ -83,12 +85,13 @@ export default function Form(props) {
                             <option value="DOGE">Dogecoin (DOGE)</option>
                             <option value="UNI">Uniswap (UNI)</option>
                         </select>
+
+                        <input className="col-2 btn btn-primary" type="submit" />
                         <input className="form-control col-xs-2 mr-2"
                             type="date"
                             placeholder="Notification date"
                             {...register("checkDate")}
                         />
-                        <input className="col-2 btn btn-primary" type="submit" />
                     </>
                 )}
             </form>

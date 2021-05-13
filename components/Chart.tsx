@@ -15,7 +15,7 @@ Chart.register(BarElement, BarController, LinearScale, CategoryScale);
 const ChartStyle = styled.div`
     padding: 50px;
     h2  {
-        font-family: "Montserrat", sans - serif;
+        font-family: "Montserrat", sans-serif;
         font-size: 3rem;
         line-height: 1.5;
         font-weight: bolder;
@@ -28,8 +28,13 @@ const ChartStyle = styled.div`
 export const MyChart = () => {
     const { data } = useSWR("/api/v3/klines?symbol=BTCUSDT&interval=1m");
     console.log("binance data");
-    console.log(data);
+    // console.log(data);
     const ref = useRef<HTMLCanvasElement>();
+
+    // constructor (props) {
+    //     super(props);
+
+    // }
 
     const chart = useMemo(() => {
         if (!ref.current) return;
@@ -66,7 +71,7 @@ export const MyChart = () => {
         // Get only open values from binance
         const open_values = _.takeRight(
             data.map((e) => parseFloat(e[1])),
-            30
+            40
         );
         //console.log(open_values);
         chart.data.labels = _.range(open_values.length);
@@ -77,7 +82,7 @@ export const MyChart = () => {
     return (
         <ChartStyle className="container">
             <h2>Precio Bitcoin</h2>
-            <p>Actualización cada 1 minuto (últimos 20 valores)</p>
+            <p>Actualización cada 1 minuto (últimos 40 valores)</p>
             <p> Precio x hora actual</p>
             <div style={{ height: 500 }}>
                 <canvas ref={ref} />
