@@ -11,9 +11,14 @@ const Bgradient = Styled.a`
     box-shadow: 2px 2px 4px #000000;
     user-select: none;
 `
+type Props = {
+    children: string;
+    link?: string;
+    onClick?: () => void;
+}
 
-export const ButtonGradient = ({ text = "Login" }) => {
+export const ButtonGradient = ({ children = "Login", link, onClick }: Props) => {
     return (
-        <Bgradient href="/api/auth/login" className="btn btn-light" role="button" > {text} </Bgradient >
+        <Bgradient href={link} onClick={onClick} className="btn btn-light" role="button" > {children} </Bgradient >
     )
 }

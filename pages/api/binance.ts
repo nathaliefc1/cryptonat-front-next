@@ -6,6 +6,8 @@ export default class Binance {
     this.service = axios.create({ baseURL: "https://api.binance.com" });
   }
 
-  getCryptoPrice = (symbol) =>
-    this.service.get(`/api/v3/ticker/price?symbol=${symbol}EUR`);
+  getCryptoPrice = (symbol, start, end) =>
+    this.service.get(
+      `/api/v3/klines?symbol=${symbol}EUR&interval=1d&startTime=${start}&endTime=${end}`
+    );
 }

@@ -2,10 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { useForm } from "react-hook-form";
 import { useUser } from '@auth0/nextjs-auth0';
-import Simulator from '../pages/api/simulator';
 import styled from 'styled-components';
 import { ButtonGradient } from "./ButtonGradient";
 import Binance from '../pages/api/binance';
+import moment from 'moment';
 
 const binance = new Binance();
 
@@ -18,8 +18,6 @@ const Title = styled.h1`
     text-align: center;
     color: #5A4FCF;
 `
-
-const simulator = new Simulator();
 
 enum CryptoOptions {
     bitcoin = "BTC",
@@ -35,22 +33,30 @@ enum CryptoOptions {
 }
 
 interface IFormInput {
-    euros: Number;
+    euros: string;
     cryptocurrency: CryptoOptions;
     checkDate: Date;
 }
-export const addEuros = async (data) => {
-    const response = await simulator.addEuros(data);
-    return response;
-};
 
 export default function Form(props) {
-    const { register, handleSubmit, reset } = useForm<IFormInput>();
-    const onSubmit = handleSubmit(async (data: IFormInput) => {
-        const response = await binance.getCryptoPrice(data.cryptocurrency);
-        await addEuros(data);
-        reset();
+    const { register, handleSubmit } = useForm<IFormInput>();
+
+    const onSubmit = handleSubmit(async ({ checkDate, euros, cryptocurrency }: IFormInput) => {
+        const start = moment(checkDate, 'YYYY-MM-DD').startOf('day').unix() * 1000;
+        const end = moment(checkDate, 'YYYY-MM-DD').endOf('day').unix() * 1000;
+        const response = await binance.getCryptoPrice(cryptocurrency, start, end);
+        const price = parseFloat(response.data[0][4]) || 0;
+        const fiat = parseFloat(euros) || 0;
+        const quantity = fiat / price;
+        props.setResolvedData({
+            price,
+            quantity,
+            cryptocurrency,
+            euros,
+            dateRecorded: moment(checkDate, 'YYYY-MM-DD').toDate()
+        });
     });
+
     const { user, error, isLoading } = useUser();
 
     return (
@@ -59,7 +65,7 @@ export default function Form(props) {
             {!user && (
                 <>
                     <h3>Please Loggin or create an account to continue</h3>
-                    <ButtonGradient />
+                    <ButtonGradient link="/api/auth/login" >{"Login"}</ButtonGradient>
                 </>
             )}
             <form className="w-50 m-auto d-flex flex-row justify-content-center" onSubmit={handleSubmit(onSubmit)}>
@@ -85,13 +91,12 @@ export default function Form(props) {
                             <option value="DOGE">Dogecoin (DOGE)</option>
                             <option value="UNI">Uniswap (UNI)</option>
                         </select>
-
-                        <input className="col-2 btn btn-primary" type="submit" />
                         <input className="form-control col-xs-2 mr-2"
                             type="date"
                             placeholder="Notification date"
                             {...register("checkDate")}
                         />
+                        <input className="col-2 btn btn-primary" type="submit" />
                     </>
                 )}
             </form>

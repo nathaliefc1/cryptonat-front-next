@@ -52,7 +52,7 @@ export const Title = ({ text = "Welcome to Crypto Nat" }) => {
                 <h1>{text = "¿New to crypto currency? No problem"}</h1>
                 <h3>We provide an easy solution for you to understand cryptocurrency</h3>
                 <p>CryptoNat a platform for experiment with investment in bitcoins</p>
-                <ButtonGradient />
+                <ButtonGradient link="/api/auth/login" />
             </div>
             <div className="col lg-6 lg-3">
                 <img src="/iphoneimage_landing_1.png" />

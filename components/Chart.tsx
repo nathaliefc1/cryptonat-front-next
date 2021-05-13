@@ -65,7 +65,7 @@ export const MyChart = () => {
     console.log("CHART", chart);
 
     useEffect(() => {
-        console.log(chart);
+        // console.log(chart);
         if (!data || !chart) return;
         console.log("updating data");
         // Get only open values from binance

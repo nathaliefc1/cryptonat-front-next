@@ -5,25 +5,27 @@ import Styled from 'styled-components';
 const FooterStyle = Styled.div` 
     padding: 2% 10%;
     text-align: center;
-    color: #8f8f8f
-`
-const Icono = Styled.i`
-    pading: 20px;
-    margin: 20px
-`
-const Copyright = Styled.p`
-    margin: 10px
+    color: #8f8f8f;
+    bottom: 0px;
+    a {
+        color: #8f8f8f;
+        padding: 5px;
+        margin: 20px
+    },
+    p {
+        margin: 10px
+    }
 `
 
 export const Footer = () => {
     return (
         <FooterStyle id="footer">
-            <Icono className="social-icon"><FaFacebookF /></Icono>
-            <Icono className="social-icon"><FaTwitter /></Icono>
-            <Icono className="social-icon"><FaInstagram /></Icono>
-            <Icono className="social-icon"><FaEnvelope /></Icono>
+            <a className="social-icon" href="https://www.facebook.com/" ><FaFacebookF /></a>
+            <a className="social-icon" href="https://www.twitter.com/"><FaTwitter /></a>
+            <a className="social-icon" href="https://www.instagram.com/" ><FaInstagram /></a>
+            <a className="social-icon"><FaEnvelope /></a>
 
-            <Copyright>© Copyright 2021 CryptoNat</Copyright>
+            <p>© Copyright 2021 CryptoNat</p>
 
         </FooterStyle>
     )

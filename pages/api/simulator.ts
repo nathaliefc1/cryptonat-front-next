@@ -6,5 +6,6 @@ export default class Simulator {
     this.service = axios.create({ baseURL: process.env.NEXT_PUBLIC_BASE_URL });
   }
 
-  addEuros = (data) => this.service.post("/api/simulator", data);
+  saveTransation = (data, userId) =>
+    this.service.post(`/api/simulator/${userId}`, data);
 }

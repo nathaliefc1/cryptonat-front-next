@@ -68,11 +68,16 @@ export const Menu = ({ fetchProfile }: Prop) => {
                                 <a className="nav-link">Instructions</a>
                             </Link>
                         </li>
-                        <li className="nav-item">
-                            <Link href="#cta">
-                                <a className="nav-link">Download</a>
-                            </Link>
-                        </li>
+                        {user && (
+                            <>
+                                <li className="nav-item">
+                                    <Link href="/profile">
+                                        <a className="nav-link">Your-Cryptos</a>
+                                    </Link>
+                                </li>
+                            </>
+                        )}
+
                         <li className="nav-item">
                             <Link href="/simulator">
                                 <a className="nav-link">Simulator</a>
@@ -82,7 +87,7 @@ export const Menu = ({ fetchProfile }: Prop) => {
                     <div style={{ display: "flex-end" }}>
                         {!user && (
                             <>
-                                <ButtonGradient />
+                                <ButtonGradient link="/api/auth/login" >{"loggin"}</ButtonGradient>
                             </>
                         )}
                     </div>
@@ -90,8 +95,7 @@ export const Menu = ({ fetchProfile }: Prop) => {
                         {user && (
                             <>
                                 <img src={user.picture} width="40" className="rounded" />{" "}
-                                <a href="/api/auth/logout" className="btn btn-primary">
-                                    Logout {user.email}</a>
+                                <ButtonGradient link="/api/auth/logout">{`Logout ${user.email}`}</ButtonGradient>
                             </>
                         )}
                     </div>

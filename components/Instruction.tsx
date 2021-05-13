@@ -1,10 +1,9 @@
 import React from 'react';
-import Styled from 'styled-components';
-import { ButtonGradient } from './ButtonGradient';
+import styled from 'styled-components';
 
-const Row = Styled.div`
+const Row = styled.div`
     .row {
-        with: 100%;
+        width: 100%;
         height: 70vh;
     }
     h1 {
@@ -25,8 +24,6 @@ const Row = Styled.div`
     }
    
 `
-
-
 
 export const Instructions = ({ text = "Welcome to Crypto Nat" }) => {
     return (
