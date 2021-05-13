@@ -64,15 +64,15 @@ export const Menu = ({ fetchProfile }: Prop) => {
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link href="#instructions">
+                            <Link href="/#instructions">
                                 <a className="nav-link">Instructions</a>
                             </Link>
                         </li>
                         {user && (
                             <>
                                 <li className="nav-item">
-                                    <Link href="/profile">
-                                        <a className="nav-link">Your-Cryptos</a>
+                                    <Link href="/your-crypto">
+                                        <a className="nav-link">Your-Crypto</a>
                                     </Link>
                                 </li>
                             </>

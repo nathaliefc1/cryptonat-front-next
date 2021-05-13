@@ -8,4 +8,6 @@ export default class Simulator {
 
   saveTransation = (data, userId) =>
     this.service.post(`/api/simulator/${userId}`, data);
+
+  getSavedCrypto = (userId) => this.service.get(`/api/simulator/${userId}`);
 }
