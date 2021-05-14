@@ -10,6 +10,8 @@ const profile = new Profile();
 const App = ({ Component, pageProps }) => {
     const [loggedUser, setLoggedUser] = useState(null);
 
+    console.log('HOME', loggedUser)
+
     const fetchProfile = async (data) => {
         const response = await profile.create(data);
         setLoggedUser(response.data);
