@@ -6,20 +6,16 @@ import { Calltoaction } from '../components/Calltoaction';
 import { Instructions } from '../components/Instruction';
 import styled from 'styled-components';
 
-;
-
-
 const Div = styled.div`
     background: linear-gradient(180deg,#FD749B 0%, #5A4FCF 100%);
     color: #fff;
-    padding: 7% 15%;
+    padding: 8% 25%;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     border-radius: 40px;
 `
 
-const IndexPage = (props) => {
-    console.log({ props })
+const IndexPage = () => {
     return (
         <div>
             <PrimaryLayout>
@@ -27,7 +23,7 @@ const IndexPage = (props) => {
                 <Instructions />
                 <Div className="container">
                     <div className="card-group">
-                        <div className="card col-2">
+                        <div className="card col-4">
                             <CryptoTile />
                         </div>
                     </div>
@@ -35,8 +31,6 @@ const IndexPage = (props) => {
             </PrimaryLayout>
             <Calltoaction />
         </div>
-
-
     );
 };
 

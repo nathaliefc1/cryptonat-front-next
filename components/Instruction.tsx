@@ -7,7 +7,7 @@ const Row = styled.div`
         height: 70vh;
     }
     h1 {
-        font-family: "Montserrat", sans - serif;
+        font-family: "Montserrat", sans-serif;
         font-size: 3rem;
         line-height: 1.5;
         font-weight: bolder;
@@ -18,14 +18,14 @@ const Row = styled.div`
     p {
        padding: 1% 15%;
         line-height: 1.5;
-        font-family: "Montserrat", sans - serif;
+        font-family: "Montserrat", sans-serif;
         text-align: center;
         color: #696969;
     }
    
 `
 
-export const Instructions = ({ text = "Welcome to Crypto Nat" }) => {
+export const Instructions = ({ text = "Welcome to CryptoNat" }) => {
     return (
         <Row>
             <div className="row" id="instructions">
@@ -35,8 +35,13 @@ export const Instructions = ({ text = "Welcome to Crypto Nat" }) => {
                 <div className="container col lg-6">
                     <h1>{text}</h1>
                     <p>
-                        Free cryptocurrency purchase simulator, where you can select your favorites, check their value in future days and review their real fluctuation.
-                        You can set time alerts to check the growth of your fictitious investment.
+                        This is a CRYPTOCURRENCY CALCULATOR where you can check the price of a particular cryptocurrency on a certain date.
+                    </p>
+                    <p>
+                        You will be able to save your results in your profile and compare prices on certain dates.
+                    </p>
+                    <p>
+                        The objective is that you can know which cryptocurrencies fluctuate more or which ones favor you when making a "possible investment".
                     </p>
                 </div>
             </div>

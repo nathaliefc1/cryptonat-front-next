@@ -4,17 +4,16 @@ import { ButtonGradient } from './ButtonGradient';
 
 
 const Row = styled.div`
-    width: 100%;
     height: 75vh;
     background: linear-gradient(180deg,#FD749B 5%, #281AC8 100%);
     color: #fff;
     position: relative;
     h1 {
-        font-family: "Montserrat", sans - serif;
+        font-family: "Montserrat", sans-serif;
         font-size: 3rem;
         line-height: 1.5;
         font-weight: bolder;
-        padding: 8% 12%;
+        padding: 5% 10%;
         text-align: center;
     }
     img {
@@ -40,19 +39,16 @@ const Row = styled.div`
     .custom-shape-divider-bottom-1620419817 .shape-fill {
         fill: #ffffff;
     }
-
-
-
 `
 
 export const Title = ({ text = "Welcome to Crypto Nat" }) => {
     return (
         <Row className="row">
             <div className="container col lg-6 lg-3">
-                <h1>{text = "¿New to crypto currency? No problem"}</h1>
+                <h1>{text = "New to cryptocurrency? No problem"}</h1>
                 <h3>We provide an easy solution for you to understand cryptocurrency</h3>
-                <p>CryptoNat a platform for experiment with investment in bitcoins</p>
-                <ButtonGradient link="/api/auth/login">{"loggin"}</ButtonGradient>
+                <p>Free cryptocurrency calculator with new features comming soon</p>
+                <ButtonGradient link="/api/auth/login">{"login"}</ButtonGradient>
             </div>
             <div className="col lg-6 lg-3">
                 <img src="/iphoneimage_landing_1.png" />

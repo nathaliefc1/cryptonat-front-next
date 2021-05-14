@@ -87,7 +87,7 @@ export const Menu = ({ fetchProfile }: Prop) => {
                     <div style={{ display: "flex-end" }}>
                         {!user && (
                             <>
-                                <ButtonGradient link="/api/auth/login" >{"loggin"}</ButtonGradient>
+                                <ButtonGradient link="/api/auth/login" >{"login"}</ButtonGradient>
                             </>
                         )}
                     </div>

@@ -64,7 +64,7 @@ export default function Form(props) {
             <Title> Let's Start </Title>
             {!user && (
                 <>
-                    <h3>Please Loggin or create an account to continue</h3>
+                    <h3>Please Login or create an account to continue</h3>
                     <ButtonGradient link="/api/auth/login" >{"Login"}</ButtonGradient>
                 </>
             )}

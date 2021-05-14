@@ -11,7 +11,6 @@ import SimulatorService from './api/simulator';
 
 const service = new SimulatorService();
 
-
 const Card = styled.div`
     h3 {
         font-family: "Montserrat", sans-serif;
@@ -22,14 +21,13 @@ const Card = styled.div`
         text-align: center;
         color: #5A4FCF;
     }
-    p {
+   span {
        padding: 1% 15%;
         line-height: 1.5;
         font-family: "Montserrat", sans-serif;
         text-align: center;
         color: #696969;
     }
-   
 `
 type ResolvedData = {
     quantity?: number;
@@ -51,9 +49,9 @@ const Simulator = ({ loggedUser }) => {
         if (resolvedData.price) {
             return (
                 <Card className="card">
-                    <h3 className="card-title">Total Euros por Cryptocurrency</h3>
-                    <p className="card-body">{resolvedData.quantity}{"   "}{resolvedData.cryptocurrency}{"  / "}{resolvedData.euros}{"  €"}</p>
-                    <p className="card-body">{resolvedData.price}{"   "}{resolvedData.cryptocurrency}{"   / €"}</p>
+                    <h3 className="card-title">Total Euros per Cryptocurrency</h3>
+                    <span className="card-body">{resolvedData.quantity}{"   "}{resolvedData.cryptocurrency}{"  / "}{resolvedData.euros}{"  €"}</span>
+                    <span className="card-body">{resolvedData.price}{"   "}{resolvedData.cryptocurrency}{"   / €"}</span>
                     <ButtonGradient onClick={handleSaveClick}>{"Save data"}</ButtonGradient>
                 </Card>
             )
@@ -80,11 +78,9 @@ const Simulator = ({ loggedUser }) => {
                         <MyChart />
                     </SWRConfig>
                 </div>
-
             </PrimaryLayout>
         </div>
     );
 };
 
 export default Simulator;
-

@@ -50,7 +50,6 @@ const Simulator = ({ loggedUser }) => {
 
     const gooddate = () => {
         cryptos.map((el) => (el.dateRecorded))
-
     }
 
     return (
@@ -59,7 +58,7 @@ const Simulator = ({ loggedUser }) => {
                 <div className="card">
                     <Card className="card-body">
                         <h1>Your Cryptocurrency</h1>
-                        <h3>Check out all the price you saved!</h3>
+                        <h3>Check out all the information you saved!</h3>
 
                         {!!cryptos.length && cryptos.map((el) => {
                             const { euros, cryptocurrency, quantity, dateRecorded } = el;

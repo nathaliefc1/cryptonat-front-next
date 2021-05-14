@@ -1,16 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ButtonGradient } from './ButtonGradient';
 
 
 const Row = styled.div`
-    width: 100%;
     height: 75vh;
     background: linear-gradient(180deg,#FD749B 5%, #281AC8 100%);
     color: #fff;
     position: relative;
     h1 {
-        font-family: "Montserrat", sans - serif;
+        font-family: "Montserrat", sans-serif;
         font-size: 3rem;
         line-height: 1.5;
         font-weight: bolder;
@@ -51,7 +49,7 @@ export const TitleSimulator = ({ text = "Welcome to Crypto Nat" }) => {
             <div className="container col lg-6 lg-3">
                 <h1>{text = "Check our cryptocurrency simulator"}</h1>
                 <h2>Now you can create your alerts for especific dates</h2>
-                <p>Now you can create your alerts for especific dates</p>
+
             </div>
             <div className="col lg-6 lg-3">
                 <img src="/notification_phone_person.png" />
