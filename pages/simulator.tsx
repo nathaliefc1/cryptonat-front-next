@@ -40,8 +40,8 @@ const Simulator = ({ loggedUser }) => {
     const [resolvedData, setResolvedData] = useState<ResolvedData>({});
 
     const handleSaveClick = () => {
+        console.log(loggedUser)
         const userId = loggedUser._id;
-        console.log(resolvedData)
         service.saveTransation(resolvedData, userId);
     }
 
