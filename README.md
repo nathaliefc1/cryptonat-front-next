@@ -1,6 +1,7 @@
 # Cryptonat
 ## front
 ![Alt Text](https://media.giphy.com/media/Vi5qBEpExoCmzEcDvF/giphy.gif)
+
 Este proyecto surge con objetivo principal es ayudar a las personas que quieren entrar al mundo de las cryptocurrency y no saben cuál es su valor, ni cómo ni cuanto fluctúa estas nuevas criptomonedas, donde no están listos para invertir dinero real pero si invertir tiempo para ver los resultados pasados unos días o semanas. Es por ello que creé un CRYPTOCURRENCY CALCULATOR donde puedes consultar en fechas determinadas el precio de las cryptocurrency y guardar tus resultados en tu perfil, con ello tener una idea de las criptomonedas que fluctuan más o cuáles te favorecen al hacer una "posible inversión".
  
 Este proyecto va lejos de estar totalmente finalizado ya que hay otras funcionalidades que me gustaría agregar y con ello poder ayudar a romper esas barreras de entrada al mundo de las criptomonedas, siempre y cuando sea sabiamente y con cuidado.. Uno de los grandes objetivos no logrado pero que queda para futuro era poder enviar un email cuando el precio de la criptomoneda alcance un precio objetivo establecido por ti o una fecha en particular. Por supuesto, os avisaré cuando logre mi objetivo futuro y esté en funcionamiento.
@@ -32,12 +33,14 @@ Tecnologías utilizadas Front:
 •	Chart.js
 •	lodash
 •	moment
+
 Tecnologías utilizadas Api:
 •	Express
 •	Mongoose
 •	ts-node-dev
 •	Dotenv
 •	typescript
+
 
 ![Alt Text](https://media.giphy.com/media/W8cotAPzS9oPcsBa7n/giphy.gif)
 
