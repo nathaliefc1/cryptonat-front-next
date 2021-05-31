@@ -29,10 +29,10 @@ export const Instructions = ({ text = "Welcome to CryptoNat" }) => {
     return (
         <Row>
             <div className="row" id="instructions">
-                <div className="col-lg-6">
+                <div className="col lg-6 lg-4">
                     <img src="/landing_4.png"></img>
                 </div>
-                <div className="container col lg-6">
+                <div className="container col lg-6 lg-4">
                     <h1>{text}</h1>
                     <p>
                         This is a CRYPTOCURRENCY CALCULATOR where you can check the price of a particular cryptocurrency on a certain date.

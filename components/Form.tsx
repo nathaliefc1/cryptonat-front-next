@@ -75,7 +75,7 @@ export default function Form(props) {
                             className="form-control col-xs-2 mr-2"
                             type="number"
                             placeholder="Euros"
-                            {...register("euros")}
+                            {...register("euros"), { required: true }}
                         />
                         <select
                             className="form-control col-xs-2 ml-2 mr-2"
@@ -94,7 +94,7 @@ export default function Form(props) {
                         <input className="form-control col-xs-2 mr-2"
                             type="date"
                             placeholder="Notification date"
-                            {...register("checkDate")}
+                            {...register("checkDate"), { required: true }}
                         />
                         <input className="col-2 btn btn-primary" type="submit" />
                     </>
